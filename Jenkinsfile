@@ -14,7 +14,7 @@ pipeline
                     reuseNode true
                 }
             }
-            
+
             steps
             {
                 sh '''
@@ -25,6 +25,14 @@ pipeline
                     npm run build
                     ls -la
                 '''
+            }
+        }
+
+        stage('Test')
+        {
+            steps
+            {
+                echo 'Test stage'
             }
         }
     }
